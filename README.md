@@ -6,7 +6,7 @@ A temple-themed animated wedding invitation for
 **Sumuhurtham:** Saturday, 21 November 2026, 8:52 PM · Sri Balaji Convention, Penugonda
 **Reception & Dinner:** Sunday, 22 November 2026, 7:00 PM · Sangepu Kalyanamandapam, Gosala
 
-**Live link:** https://ravindrasurathu.github.io/Manikanta-Rajeswari-Wedding/
+**Live link:** https://vivaahcreations.com/
 
 ---
 
@@ -61,6 +61,16 @@ To show phone numbers, fill in `contacts`, e.g.
 contacts: [ { name: "Srihari", phone: "+91 90000 00000" } ],
 ```
 
-## 🌐 Turning on GitHub Pages (one time)
-Repo **Settings → Pages → Source: Deploy from a branch → Branch: `main` / `(root)` → Save**.
-The link above goes live within a couple of minutes.
+## 🌐 Hosting & custom domain
+Served by GitHub Pages from the `main` branch (root) at **https://vivaahcreations.com/**.
+
+- The `CNAME` file in this repo tells GitHub Pages to use `vivaahcreations.com`. Don't delete it.
+- DNS for `vivaahcreations.com` (Namecheap domain, Custom DNS → AWS Route 53, or Namecheap BasicDNS):
+
+| Name | Type | Value |
+|------|------|-------|
+| `@` (apex) | A | `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` |
+| `www` | CNAME | `ravindrasurathu.github.io` |
+
+- The old link `https://ravindrasurathu.github.io/Manikanta-Rajeswari-Wedding/` redirects to the new domain automatically.
+- Repo **Settings → Pages**: custom domain `vivaahcreations.com`, **Enforce HTTPS** ticked.
