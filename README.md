@@ -56,6 +56,17 @@ If a photo is missing, the page shows a gold placeholder with the expected file 
 Everything is in the `CONFIG` block at the top of `Manikanta-Rajeswari-Wedding/index.html`: names, parents, muhurtham time (drives the countdown),
 events, venues and Google Maps links, invited-by and contacts. Edit it on GitHub with the ✏️ pencil icon → **Commit changes**.
 
+### 🇮🇳 Telugu / English switch
+The gold **EN | తెలుగు** switch (bottom-left, also on the opening screen) flips the whole page between English and Telugu.
+Each guest's choice is remembered on their phone. To share a link that opens straight in Telugu, add `#te` to the end:
+`https://vivaahcreations.com/Manikanta-Rajeswari-Wedding/#te`. The WhatsApp button does this automatically when Telugu is on,
+and sends the Telugu message.
+
+Where to edit the text:
+- `CONFIG` holds the English details, and `TELUGU` (just below it) the Telugu versions of the same details. Anything missing from `TELUGU` falls back to English.
+- `TEXT.en` / `TEXT.te` hold the headings, buttons and labels. Setting an entry to `""` hides it in that language.
+- `whatsapp` inside `CONFIG` and `TELUGU` is the share message for each language.
+
 To show phone numbers, fill in `contacts`, e.g.
 ```js
 contacts: [ { name: "Srihari", phone: "+91 90000 00000" } ],

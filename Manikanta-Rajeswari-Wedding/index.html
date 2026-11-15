@@ -22,8 +22,6 @@ const CONFIG = {
   bride: "Rajeswari",
   groomFull: "Naga Sai Manikanta Teja",
   brideFull: "Rajeswari",
-  groomTe: "చి॥ నాగ సాయి మణికంఠ తేజ",
-  brideTe: "చి॥ల॥సౌ॥ రాజేశ్వరి",
   groomTitle: "Chi.",                       // Chiranjeevi
   brideTitle: "Chi. La. Sow.",              // Chiranjeevi Lakshmi Sowbhagyavathi
   groomParents: "Elder son of Sri Amalapuram Srihari & Smt. Sridevi",
@@ -33,16 +31,17 @@ const CONFIG = {
   // Sumuhurtham — used for the countdown (IST)
   muhurtham: "2026-11-21T20:52:00+05:30",
   muhurthamText: "Saturday · 21 November 2026 · 8:52 PM",
-  panchangam: "స్వస్తిశ్రీ చాంద్రమానేన శ్రీ పరాభవ నామ సంవత్సర కార్తీక శుద్ధ ద్వాదశి, రేవతి నక్షత్రయుక్త మిథున లగ్న పుష్కరాంశము నందు",
+  muhurthamLong: "Saturday, 21st November 2026 at 8:52 PM",
+  panchangam: "Sri Parabhava Nama Samvatsara · Karthika Shuddha Dwadashi · Revathi Nakshatram · Mithuna Lagna Pushkaramsham",
 
   events: [
-    { te: "సుముహూర్తం", en: "Sumuhurtham · Wedding", icon: "🪔",
+    { title: "Sumuhurtham · Wedding", icon: "🪔",
       start: "2026-11-21T20:52:00+05:30", hours: 3,
       date: "Saturday, 21 November 2026", time: "8:52 PM",
       note: "Revathi Nakshatram · Mithuna Lagnam",
       place: "Sri Balaji Convention, Penugonda, W.G. Dist.",
       mapUrl: "https://maps.google.com/?q=Sri+Balaji+Convention+Penugonda" },
-    { te: "రిసెప్షన్ & విందు", en: "Reception & Dinner", icon: "✨",
+    { title: "Reception & Dinner", icon: "✨",
       start: "2026-11-22T19:00:00+05:30", hours: 3,
       date: "Sunday, 22 November 2026", time: "7:00 PM onwards",
       place: "Sangepu Siva Koteswara Rao Kalyana Vedhika, Bhavanarushi, Nallamekalavari Street, Gosala, Vijayawada",
@@ -50,10 +49,10 @@ const CONFIG = {
   ],
 
   venues: [
-    { label: "Kalyana Vedika · Wedding", te: "కళ్యాణవేదిక", name: "Sri Balaji Convention",
+    { label: "Wedding Venue", name: "Sri Balaji Convention",
       address: "Penugonda, West Godavari District",
       mapUrl: "https://maps.google.com/?q=Sri+Balaji+Convention+Penugonda" },
-    { label: "Reception & Dinner", te: "రిసెప్షన్ & విందు", name: "Sangepu Siva Koteswara Rao Kalyana Vedhika",
+    { label: "Reception & Dinner", name: "Sangepu Siva Koteswara Rao Kalyana Vedhika",
       address: "Bhavanarushi, Nallamekalavari Street, Gosala, Vijayawada",
       mapUrl: "https://maps.google.com/?q=Sangepu+Siva+Koteswara+Rao+Kalyana+Vedhika+Gosala+Vijayawada" }
   ],
@@ -62,7 +61,7 @@ const CONFIG = {
 
   // ---- WhatsApp invitation message (WhatsApp formatting: *bold*  _italic_) ----
   whatsapp: (C, link) => [
-    "🪔 *శ్రీరస్తు · శుభమస్తు · అవిఘ్నమస్తు* 🪔",
+    "🪔 *Srirasthu · Subhamasthu · Avighnamasthu* 🪔",
     "",
     "_With the divine blessings of the Almighty & our elders_ 💐",
     "",
@@ -108,17 +107,163 @@ const CONFIG = {
 
   invitedBy: {
     hosts: "Amalapuram Srihari – Smt. Sridevi",
-    hostsTe: "అమలాపురం శ్రీహరి – శ్రీమతి శ్రీదేవి",
     groomSide: ["Sri Amalapuram Srihari", "& Smt. Sridevi"],
     brideSide: ["Sri Pelluri Srinivas", "& Smt. Naga Lakshmi", "Pekeru, Iragavaram Mandal, W.G. Dist."]
   },
-  compliments: "తాతయ్య-నాయనమ్మ, తాతయ్య-అమ్మమ్మ, మేనమామ-అత్త, మామయ్యలు-మేనత్తలు, బాబాయిలు-పిన్నిలు మరియు బంధుమిత్రుల అభినందనలతో",
+  compliments: "With love from our grandparents, uncles, aunts and all our near & dear",
   contacts: [],   // e.g. { name: "Srihari", phone: "+91 90000 00000" }
 
   // Background music: put music.mp3 next to index.html. If it's missing,
   // a soft synthesized tanpura drone plays instead.
   music: "music.mp3",
-  siteUrl: "https://vivaahcreations.com/Manikanta-Rajeswari-Wedding/"   // optional: your GitHub Pages link, used in WhatsApp share
+  siteUrl: "https://vivaahcreations.com/Manikanta-Rajeswari-Wedding/"   // your link, used in WhatsApp share
+};
+
+/* ==========================================================================
+   🇮🇳  TELUGU VERSION — shown when the తెలుగు switch is on.
+   Anything not listed here falls back to the English CONFIG above.
+   Lists (events, venues, journey) are matched item by item.
+   ========================================================================== */
+const TELUGU = {
+  groom: "మణికంఠ",
+  bride: "రాజేశ్వరి",
+  groomFull: "నాగ సాయి మణికంఠ తేజ",
+  brideFull: "రాజేశ్వరి",
+  groomTitle: "చి॥",
+  brideTitle: "చి॥ల॥సౌ॥",
+  groomParents: "శ్రీ అమలాపురం శ్రీహరి – శ్రీమతి శ్రీదేవి గార్ల జ్యేష్ఠ పుత్రుడు",
+  brideParents: "ప॥గో॥జిల్లా, ఇరగవరం మండలం, పేకేరు గ్రామ వాస్తవ్యులు శ్రీ పెల్లూరి శ్రీనివాస్ – శ్రీమతి నాగలక్ష్మి గార్ల పుత్రిక",
+  muhurthamText: "శనివారం · 21-11-2026 · రాత్రి 8-52",
+  muhurthamLong: "తేది. 21-11-2026 స్థిర(శని)వారం రాత్రి గం॥ 8-52 ని॥లకు",
+  panchangam: "స్వస్తిశ్రీ చాంద్రమానేన శ్రీ పరాభవ నామ సంవత్సర కార్తీక శుద్ధ ద్వాదశి, రేవతి నక్షత్రయుక్త మిథున లగ్న పుష్కరాంశము నందు",
+
+  events: [
+    { title: "సుముహూర్తం", date: "తేది. 21-11-2026, స్థిర(శని)వారం", time: "రాత్రి గం॥ 8-52 ని॥లకు",
+      note: "రేవతి నక్షత్రయుక్త మిథున లగ్న పుష్కరాంశము",
+      place: "శ్రీ బాలాజీ కన్వెన్షన్, పెనుగొండ, ప॥గో॥జిల్లా" },
+    { title: "రిసెప్షన్ & విందు", date: "తేది. 22-11-2026, ఆదివారం", time: "రాత్రి 7-00 గంటల నుండి",
+      place: "సంగేపు శివ కోటేశ్వరరావు కళ్యాణ వేదిక, భావనారుషి, నల్లమేకలవారి వీధి, గోసాల, విజయవాడ" }
+  ],
+  venues: [
+    { label: "కళ్యాణవేదిక", name: "శ్రీ బాలాజీ కన్వెన్షన్", address: "పెనుగొండ, పశ్చిమ గోదావరి జిల్లా" },
+    { label: "రిసెప్షన్ & విందు", name: "సంగేపు శివ కోటేశ్వరరావు కళ్యాణ వేదిక", address: "భావనారుషి, నల్లమేకలవారి వీధి, గోసాల, విజయవాడ" }
+  ],
+  journey: [
+    { title: "సముద్ర తీరాన", text: "తీరాన్ని మళ్లీ మళ్లీ చేరే అలల్లా, రెండు హృదయాలు ఒకదానికొకటి దగ్గరయ్యాయి." },
+    { title: "రెండు హృదయాలు", text: "వెచ్చని ఆకాశం, మౌన చిరునవ్వులు, మాటలు అవసరం లేని ఒక వాగ్దానం." },
+    { title: "ఆలయ సన్నిధిలో", text: "ఆలయపు నిశ్శబ్దంలో, పవిత్ర ప్రమాణాలతో రాసుకున్న శాశ్వత బంధాన్ని మా హృదయాలు గుసగుసలాడాయి." },
+    { title: "శాశ్వత బంధం మొదలు", text: "పవిత్ర మండపంలో, తలంబ్రాలు, మంగళ వాద్యాల నడుమ మేమిద్దరం ఒక్కటవుతున్నాం." }
+  ],
+  invitedBy: {
+    hosts: "అమలాపురం శ్రీహరి – శ్రీమతి శ్రీదేవి",
+    groomSide: ["శ్రీ అమలాపురం శ్రీహరి", "శ్రీమతి శ్రీదేవి"],
+    brideSide: ["శ్రీ పెల్లూరి శ్రీనివాస్", "శ్రీమతి నాగలక్ష్మి", "పేకేరు, ఇరగవరం మండలం, ప॥గో॥జిల్లా"]
+  },
+  compliments: "తాతయ్య-నాయనమ్మ, తాతయ్య-అమ్మమ్మ, మేనమామ-అత్త, మామయ్యలు-మేనత్తలు, బాబాయిలు-పిన్నిలు మరియు బంధుమిత్రుల అభినందనలతో",
+
+  whatsapp: (C, link) => [
+    "🪔 *శ్రీరస్తు · శుభమస్తు · అవిఘ్నమస్తు* 🪔",
+    "",
+    "_వివాహ మహోత్సవ ఆహ్వాన శుభపత్రిక_ 💐",
+    "",
+    "మా జ్యేష్ఠ పుత్రుడు",
+    `💍 *చి॥ ${C.groomFull}* కు`,
+    `*చి॥ల॥సౌ॥ ${C.brideFull}* ని 💍`,
+    "ఇచ్చి వివాహము జరిపించుటకు పెద్దలు సుముహూర్తం నిశ్చయించినారు. 🙏✨",
+    "",
+    "━━━━━━━━━━━━━━━",
+    "🔥 *సుముహూర్తం*",
+    "📅 తేది. 21-11-2026, స్థిర(శని)వారం",
+    "🕗 రాత్రి గం॥ 8-52 ని॥లకు",
+    `📍 ${C.venues[0].name}, పెనుగొండ`,
+    `🗺️ ${C.venues[0].mapUrl}`,
+    "",
+    "━━━━━━━━━━━━━━━",
+    "🎉 *రిసెప్షన్ & విందు*",
+    "📅 తేది. 22-11-2026, ఆదివారం",
+    "🕖 రాత్రి 7-00 గంటల నుండి",
+    `📍 ${C.venues[1].name}, ${C.venues[1].address}`,
+    `🗺️ ${C.venues[1].mapUrl}`,
+    "━━━━━━━━━━━━━━━",
+    "",
+    "ముక్కోటి దేవతలు ఒక్కటిగా, శతకోటి దీవెనలు అందించగా... వేదమంత్రాల నడుమ ఒక్కటవుతున్న వధూవరులను మీ చల్లని దీవెనలతో ఆశీర్వదించగా రారండి... ❤️",
+    "",
+    "🌐 *పూర్తి ఆహ్వానం & దారి వివరాలు:*",
+    link,
+    "",
+    "_మీ ఆగమనాభిలాషులు,_",
+    "*అమలాపురం శ్రీహరి – శ్రీమతి శ్రీదేవి* 🙏",
+  ].join("\n")
+};
+
+/* Page labels and headings in both languages ( "" hides an item in that language ) */
+const TEXT = {
+  en: {
+    title: "Manikanta ♡ Rajeswari — Wedding Invitation",
+    loader: "Lighting the sacred lamps", gateKick: "Wedding Invitation",
+    gateTag: "Two families, one sacred bond — blessed in the presence of the divine",
+    tap: "🔔 Ring the bell to enter", bellAria: "Ring the bell to open the invitation",
+    srirastu: "Srirasthu &nbsp;·&nbsp; Subhamasthu &nbsp;·&nbsp; Avighnamasthu",
+    shloka: "Sri Ramapatni Janakasya Putri Seetangana Sundara Komalangi |<br>Bhugarbhajata Bhuvanaika Mata Vadhuvarabhyam Varada Bhavantu ||",
+    heroTitle: "Amalapuram's Wedding Invitation", heroSub: "",
+    inviteLine: "We solicit your gracious presence with family and friends on the auspicious occasion of the marriage of our elder son",
+    weds: "with", heroAfter: "", scroll: "SCROLL",
+    cdKick: "Sumuhurtham", cdH2: "The Auspicious Muhurtham",
+    days: "Days", hours: "Hours", minutes: "Minutes", seconds: "Seconds",
+    cdNote: "until we tie the sacred knot before Agni and the gods",
+    cdDone: "The sacred knot has been tied — thank you for your blessings! 💛",
+    bandKick: "", bandLine: "Two hearts, one promise,<br>a lifetime to go",
+    coupleKick: "The Couple", coupleH2: "The Bride &amp; Groom", groomRole: "The Groom", brideRole: "The Bride",
+    journeyKick: "Our Story", journeyH2: "Our Journey", journeyP: "Bound by a thread of gold, guided by blessings",
+    galKick: "Memories", galH2: "Moments We Cherish",
+    evKick: "Celebrations", evH2: "Wedding Celebrations", evP: "Join us through every ritual, every song and every blessing",
+    venueKick: "Venues", venueH2: "Where To Find Us",
+    blessKick: "Akshintalu &amp; Blessings", blessH2: "Shower Your Blessings", blessP: "Tap to shower akshintalu and petals on the couple",
+    blessBtn: "🌼 Shower Akshintalu", blessCount: n => `You have showered blessings ${n} time${n > 1 ? "s" : ""} 🙏`,
+    invitedH2: "Invited By", hostsKick: "Awaiting your gracious presence",
+    groomFam: "Groom's Family", brideFam: "Bride's Family", complHead: "With best compliments from: Near &amp; Dear",
+    contactKick: "A Humble Request", contactH2: "Your Presence Is Our Joy",
+    vinna: "With the blessings of all the gods and countless good wishes, as the couple become one amid sacred Vedic chants, we humbly request you to come and bless them.",
+    contactP: "Your presence and blessings will make our celebration complete",
+    waBtn: "💬 Share via WhatsApp", copyMsg: "📋 Copy Invite Message", copyLink: "🔗 Copy Link", saveDate: "📅 Save the Date",
+    directions: "📍 Directions", getDirections: "📍 Get Directions", addCal: "+ Add to Calendar",
+    copiedMsg: "Invite message copied ✓", copiedLink: "Link copied ✓", copyFail: "Copy not allowed here — use WhatsApp share",
+    footBless: "Mangalam Mahat &nbsp;·&nbsp; Kalyanamasthu", footLove: "With love &amp; gratitude",
+    addPhoto: "ADD PHOTO", musicAria: "Toggle music", langAria: "Choose language"
+  },
+  te: {
+    title: "మణికంఠ ♡ రాజేశ్వరి — వివాహ ఆహ్వానం",
+    loader: "దీపాలు వెలిగిస్తున్నాం", gateKick: "వివాహ మహోత్సవ ఆహ్వాన శుభపత్రిక",
+    gateTag: "రెండు కుటుంబాలు, ఒకే పవిత్ర బంధం — దైవ సన్నిధిలో",
+    tap: "🔔 గంట మోగించి లోపలికి రండి", bellAria: "గంట మోగించి ఆహ్వానం తెరవండి",
+    srirastu: "శ్రీరస్తు &nbsp;·&nbsp; శుభమస్తు &nbsp;·&nbsp; అవిఘ్నమస్తు",
+    shloka: "శ్లో॥ శ్రీరామపత్నీ జనకస్యపుత్రీ సీతాంగనా సుందర కోమలాంగీ ।<br>భూగర్భజాతా భువనైకమాతా వధూవరాభ్యాం వరదాభవంతు ॥",
+    heroTitle: "వివాహ మహోత్సవ ఆహ్వాన శుభపత్రిక", heroSub: "",
+    inviteLine: "మా జ్యేష్ఠ పుత్రుడు",
+    weds: "కు", heroAfter: "ని ఇచ్చి వివాహము జరిపించుటకు పెద్దలు సుముహూర్తం నిశ్చయించినారు.", scroll: "క్రిందకు",
+    cdKick: "శుభ ఘడియ సమీపిస్తోంది", cdH2: "సుముహూర్తం",
+    days: "రోజులు", hours: "గంటలు", minutes: "నిమిషాలు", seconds: "సెకన్లు",
+    cdNote: "అగ్నిసాక్షిగా వధూవరులు ఒక్కటయ్యే శుభ ఘడియకు",
+    cdDone: "వధూవరులు ఒక్కటయ్యారు — మీ ఆశీస్సులకు ధన్యవాదాలు! 💛",
+    bandKick: "", bandLine: "రెండు హృదయాలు, ఒకే ప్రమాణం,<br>జీవితాంతం కలిసి",
+    coupleKick: "కళ్యాణ జంట", coupleH2: "వధూవరులు", groomRole: "వరుడు", brideRole: "వధువు",
+    journeyKick: "మా కథ", journeyH2: "మా ప్రయాణం", journeyP: "బంగారు దారంతో ముడిపడి, పెద్దల ఆశీస్సులతో సాగుతున్న ప్రయాణం",
+    galKick: "జ్ఞాపకాలు", galH2: "మధుర క్షణాలు",
+    evKick: "శుభ కార్యక్రమాలు", evH2: "వివాహ వేడుకలు", evP: "ప్రతి సంప్రదాయంలో, ప్రతి ఆశీర్వాదంలో మాతో పాలుపంచుకోండి",
+    venueKick: "దారి వివరాలు", venueH2: "వివాహ వేదికలు",
+    blessKick: "అక్షింతలు &amp; ఆశీస్సులు", blessH2: "మీ ఆశీస్సులు అందించండి", blessP: "వధూవరులపై అక్షింతలు, పూలు చల్లడానికి క్రింది బటన్ నొక్కండి",
+    blessBtn: "🌼 అక్షింతలు చల్లండి", blessCount: n => `మీరు ${n} సార్లు ఆశీర్వదించారు 🙏`,
+    invitedH2: "ఆహ్వానించువారు", hostsKick: "మీ ఆగమనాభిలాషులు",
+    groomFam: "వరుని తరఫు", brideFam: "వధువు తరఫు", complHead: "",
+    contactKick: "✦ విన్నపము ✦", contactH2: "మీ రాక మాకు ఆనందం",
+    vinna: "ముక్కోటి దేవతలు ఒక్కటిగా, శతకోటి దీవెనలు అందించగా... వేదమంత్రాల నడుమ ఒక్కటవుతున్న వధూవరులను.. మీ చల్లని దీవెనలతో ఆశీర్వదించగా రారండి...",
+    contactP: "",
+    waBtn: "💬 వాట్సాప్‌లో పంపండి", copyMsg: "📋 ఆహ్వాన సందేశం కాపీ", copyLink: "🔗 లింక్ కాపీ", saveDate: "📅 క్యాలెండర్‌లో గుర్తుంచుకోండి",
+    directions: "📍 దారి చూపు", getDirections: "📍 దారి చూడండి", addCal: "+ క్యాలెండర్‌లో చేర్చండి",
+    copiedMsg: "ఆహ్వాన సందేశం కాపీ అయింది ✓", copiedLink: "లింక్ కాపీ అయింది ✓", copyFail: "కాపీ కుదరలేదు — వాట్సాప్ బటన్ వాడండి",
+    footBless: "మంగళమ్ మహత్ &nbsp;·&nbsp; శ్రీశ్రీశ్రీశ్రీశ్రీ", footLove: "ప్రేమతో, కృతజ్ఞతలతో",
+    addPhoto: "ఫోటో చేర్చండి", musicAria: "సంగీతం ఆన్/ఆఫ్", langAria: "భాష ఎంచుకోండి"
+  }
 };
 </script>
 
@@ -222,7 +367,7 @@ a{color:inherit}
 .gate-bell.ring{animation:ring 1.4s ease-in-out}
 @keyframes ring{0%{transform:rotate(0)}12%{transform:rotate(22deg)}30%{transform:rotate(-18deg)}48%{transform:rotate(13deg)}66%{transform:rotate(-8deg)}84%{transform:rotate(4deg)}100%{transform:rotate(0)}}
 
-.gate-text{position:absolute;left:0;right:0;bottom:0;z-index:4;text-align:center;padding:40px 20px calc(30px + var(--safe-b));
+.gate-text{position:absolute;left:0;right:0;bottom:0;z-index:4;text-align:center;padding:40px 20px calc(84px + var(--safe-b));
   background:linear-gradient(transparent,rgba(20,3,5,.82) 35%,rgba(20,3,5,.95));transition:opacity 1s,transform 1s}
 #gate.open .gate-text,#gate.open .gate-bell,#gate.open .torana{opacity:0;transform:translateY(-20px);transition:opacity .9s,transform .9s}
 .gate-text .te{color:var(--gold2);font-size:clamp(1.1rem,4.5vw,1.6rem);letter-spacing:.04em}
@@ -499,6 +644,48 @@ footer .tag{font-family:'Cinzel',serif;letter-spacing:.24em;font-size:.8rem;colo
   background:var(--gold2);color:var(--maroon);font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.12em;opacity:0;transition:.4s;pointer-events:none}
 #toast.show{opacity:1;transform:translateX(-50%)}
 
+/* ---------- Language switch ---------- */
+#lang{position:fixed;left:calc(14px + env(safe-area-inset-left,0px));bottom:calc(23px + var(--safe-b));z-index:120;display:flex;align-items:center;padding:4px;border-radius:30px;
+  background:rgba(40,4,8,.88);border:1.5px solid var(--gold);box-shadow:0 6px 20px rgba(0,0,0,.45),0 0 16px rgba(247,215,124,.25);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+#lang button{position:relative;z-index:1;border:0;background:none;color:var(--gold2);cursor:pointer;height:34px;border-radius:20px;transition:color .3s;-webkit-tap-highlight-color:transparent}
+#lang button[data-l="en"]{width:50px;font-family:'Cinzel',serif;font-weight:600;font-size:.8rem;letter-spacing:.08em}
+#lang button[data-l="te"]{width:76px;font-family:'Noto Serif Telugu',serif;font-weight:600;font-size:.88rem}
+#lang button[aria-pressed="true"]{color:var(--maroon)}
+#lang .knob{position:absolute;top:4px;left:4px;height:34px;width:50px;border-radius:20px;
+  background:linear-gradient(100deg,#b88a2c,#f7d77c 40%,#fff3c4 55%,#f7d77c 70%,#b88a2c);box-shadow:0 2px 8px rgba(0,0,0,.35);transition:transform .4s cubic-bezier(.4,1.4,.5,1),width .4s}
+body.lang-te #lang .knob{transform:translateX(50px);width:76px}
+[data-t]:empty,#compl:empty,#cdPanch:empty{display:none}
+section,footer,.gate-text .kick,.gate-text h1,.gate-text .tag,.gate-text .tap{transition:opacity .22s ease}
+body.switching :is(section,footer,.gate-text .kick,.gate-text h1,.gate-text .tag,.gate-text .tap){opacity:0}
+.hero-after{max-width:620px;margin:8px auto 0;font-size:clamp(1rem,3.9vw,1.2rem);opacity:.92;line-height:1.7}
+
+/* English mode: section labels in small caps */
+body.lang-en .te{font-family:inherit}
+body.lang-en :is(.kick,.role,.srirastu){font-family:'Cinzel',serif;letter-spacing:.22em;text-transform:uppercase;font-size:clamp(.66rem,2.6vw,.82rem)}
+body.lang-en .srirastu{letter-spacing:.14em}
+body.lang-en :is(.shloka,.vinna,#compl,.panch){font-style:italic}
+
+/* Telugu mode typography */
+body.lang-te{font-family:'Noto Serif Telugu','Cormorant Garamond',serif;font-size:16.5px;line-height:1.8}
+body.lang-te :is(.sec-head h2,.person h3,.venue h3,.gate-text h1,.hosts-name,.name){font-family:'Noto Serif Telugu',serif;font-weight:700;letter-spacing:0;line-height:1.4}
+body.lang-te .sec-head h2{font-size:clamp(1.6rem,6vw,2.6rem)}
+body.lang-te .name{font-size:clamp(2.3rem,10.5vw,5.4rem);line-height:1.35}
+body.lang-te .gate-text h1{font-size:clamp(1.8rem,8.5vw,3rem)}
+body.lang-te .person h3{font-size:clamp(1.4rem,5.4vw,2.2rem)}
+body.lang-te .venue h3{font-size:clamp(1.3rem,4.8vw,1.9rem)}
+body.lang-te :is(.cinzel,.tap,.btn,.cal,.cd .l,.cd-date,.date-ribbon,.hon,.ti h4,.fam h4,.ev h4,.scroll-cue,#loader p,.tag,.ct h4,.vl,.ev .tm){font-family:'Noto Serif Telugu',serif;letter-spacing:.02em;text-transform:none}
+body.lang-te footer .tag{font-family:'Cinzel',serif;letter-spacing:.2em}
+body.lang-te .hero-sub .script{font-family:'Noto Serif Telugu',serif;font-weight:700;font-size:clamp(1.25rem,5.4vw,2.1rem);line-height:1.5}
+body.lang-te .weds .script{font-family:'Noto Serif Telugu',serif;font-weight:600;font-size:clamp(1.3rem,5vw,1.9rem)}
+body.lang-te .band .script{font-family:'Noto Serif Telugu',serif;font-weight:700;font-size:clamp(1.5rem,6.4vw,3rem);line-height:1.55}
+body.lang-te footer .script{font-family:'Noto Serif Telugu',serif;font-weight:700;font-size:clamp(1.4rem,6vw,2.4rem);line-height:1.6}
+body.lang-te :is(.invite-line,.cd-note,.sec-head p,.compl em,.person p,.tag){font-style:normal}
+body.lang-te .cd .l{font-size:clamp(.6rem,2.4vw,.82rem)}
+body.lang-te .cd-date{font-size:.95rem;line-height:1.8}
+body.lang-te .ev .tm{font-size:1.1rem}
+body.lang-te .btn{font-size:.82rem;letter-spacing:0}
+body.lang-te .tap{font-size:.9rem;letter-spacing:0}
+
 /* ---------- Responsive ---------- */
 @media (max-width:760px){
   .couple{grid-template-columns:1fr;gap:34px}
@@ -526,7 +713,7 @@ footer .tag{font-family:'Cinzel',serif;letter-spacing:.24em;font-size:.8rem;colo
 <div id="gate">
   <div id="loader">
     <div class="diyas" id="loaderDiyas"></div>
-    <p>Lighting the sacred lamps</p>
+    <p data-t="loader"></p>
   </div>
 
   <div class="burst"></div>
@@ -544,16 +731,16 @@ footer .tag{font-family:'Cinzel',serif;letter-spacing:.24em;font-size:.8rem;colo
   </div>
 
   <div class="torana" id="gateToran"></div>
-  <div class="gate-bell" id="bell" role="button" aria-label="Ring the bell to open the invitation" tabindex="0">
+  <div class="gate-bell" id="bell" role="button" data-ta="bellAria" tabindex="0">
     <div class="halo"></div>
     <div id="bellSvg"></div>
   </div>
 
   <div class="gate-text">
-    <div class="te">శుభ వివాహ ఆహ్వానం</div>
+    <div class="te kick" data-t="gateKick"></div>
     <h1 class="gold-text"><span class="g1"></span> <span class="amp">&amp;</span> <span class="g2"></span></h1>
-    <div class="tag">Two families, one sacred bond — blessed in the presence of the divine</div>
-    <button class="tap" id="tapBtn">🔔 Ring the bell to enter</button>
+    <div class="tag" data-t="gateTag"></div>
+    <button class="tap" id="tapBtn" data-t="tap"></button>
   </div>
 </div>
 
@@ -566,42 +753,43 @@ footer .tag{font-family:'Cinzel',serif;letter-spacing:.24em;font-size:.8rem;colo
   <div class="gopuram" id="gopuram"></div>
 
   <div class="hero-in">
-    <div class="srirastu te" data-r="up">శ్రీరస్తు &nbsp;·&nbsp; శుభమస్తు &nbsp;·&nbsp; అవిఘ్నమస్తు</div>
+    <div class="srirastu te" data-r="up" data-t="srirastu"></div>
     <div class="om-medal" data-r="zoom">
       <div class="m1" id="mandala1"></div><div class="m2" id="mandala2"></div>
       <div class="om"><span>ॐ</span></div>
     </div>
-    <div class="shloka te" data-r="up">శ్రీరామపత్నీ జనకస్యపుత్రీ సీతాంగనా సుందర కోమలాంగీ ।<br>భూగర్భజాతా భువనైకమాతా వధూవరాభ్యాం వరదాభవంతు ॥</div>
+    <div class="shloka te" data-r="up" data-t="shloka"></div>
     <div class="hero-sub" data-r="up">
-      <span class="script">Amalapuram's Wedding Invitation</span>
-      <span class="te">వివాహ మహోత్సవ ఆహ్వాన శుభపత్రిక</span>
+      <span class="script" data-t="heroTitle"></span>
+      <span class="te" data-t="heroSub"></span>
     </div>
-    <p class="invite-line" data-r="up">We solicit your gracious presence with family and friends on the auspicious occasion of the marriage of our elder son</p>
+    <p class="invite-line" data-r="up" data-t="inviteLine"></p>
     <div class="names">
       <div class="name" id="nameA"></div>
-      <div class="weds"><svg viewBox="0 0 100 60" id="rings"></svg><span class="script">with</span><svg viewBox="0 0 100 60" id="rings2"></svg></div>
+      <div class="weds"><svg viewBox="0 0 100 60" id="rings"></svg><span class="script" data-t="weds"></span><svg viewBox="0 0 100 60" id="rings2"></svg></div>
       <div class="name" id="nameB"></div>
     </div>
+    <p class="hero-after" data-t="heroAfter"></p>
     <div class="date-ribbon" id="heroDate" data-r="zoom"></div>
   </div>
-  <div class="scroll-cue"><i></i>SCROLL</div>
+  <div class="scroll-cue"><i></i><span data-t="scroll"></span></div>
 </section>
 
 <!-- ===================== COUNTDOWN ===================== -->
 <section class="light scallop" style="--edge:#2a0508">
   <div class="wrap">
     <div class="sec-head" data-r="up">
-      <div class="te">శుభ ముహూర్తం</div>
-      <h2>The Auspicious Muhurtham</h2>
+      <div class="te kick" data-t="cdKick"></div>
+      <h2 data-t="cdH2"></h2>
       <div class="divider"></div>
     </div>
     <div class="cd" id="cd" data-r="flip">
-      <div class="t"><span class="n" id="cdD">00</span><span class="l">Days</span></div>
-      <div class="t"><span class="n" id="cdH">00</span><span class="l">Hours</span></div>
-      <div class="t"><span class="n" id="cdM">00</span><span class="l">Minutes</span></div>
-      <div class="t"><span class="n" id="cdS">00</span><span class="l">Seconds</span></div>
+      <div class="t"><span class="n" id="cdD">00</span><span class="l" data-t="days"></span></div>
+      <div class="t"><span class="n" id="cdH">00</span><span class="l" data-t="hours"></span></div>
+      <div class="t"><span class="n" id="cdM">00</span><span class="l" data-t="minutes"></span></div>
+      <div class="t"><span class="n" id="cdS">00</span><span class="l" data-t="seconds"></span></div>
     </div>
-    <p class="cd-note" id="cdNote" data-r="up">until we tie the sacred knot before Agni and the gods</p>
+    <p class="cd-note" id="cdNote" data-r="up"></p>
     <p class="cd-date" id="cdDate"></p>
     <p class="te panch" id="cdPanch" data-r="up"></p>
   </div>
@@ -610,8 +798,8 @@ footer .tag{font-family:'Cinzel',serif;letter-spacing:.24em;font-size:.8rem;colo
 <!-- ===================== PHOTO BAND ===================== -->
 <section class="band" id="band">
   <div class="band-in" data-r="zoom">
-    <div class="te">రెండు హృదయాలు · ఒకే ప్రమాణం</div>
-    <p class="script">Two hearts, one promise,<br>a lifetime to go</p>
+    <div class="te" data-t="bandKick"></div>
+    <p class="script" data-t="bandLine"></p>
   </div>
 </section>
 
@@ -619,16 +807,15 @@ footer .tag{font-family:'Cinzel',serif;letter-spacing:.24em;font-size:.8rem;colo
 <section class="dark">
   <div class="wrap">
     <div class="sec-head" data-r="up">
-      <div class="te">వధూవరులు</div>
-      <h2 class="gold-text">The Bride &amp; Groom</h2>
+      <div class="te kick" data-t="coupleKick"></div>
+      <h2 class="gold-text" data-t="coupleH2"></h2>
       <div class="divider"></div>
     </div>
     <div class="couple">
       <div class="person" data-r="left">
-        <div class="te role">వరుడు</div>
+        <div class="te role" data-t="groomRole"></div>
         <div class="hon" id="groomHon"></div>
         <h3 class="gold-text" id="groomName"></h3>
-        <div class="te tename" id="groomTeName"></div>
         <p id="groomPar"></p>
       </div>
       <div class="mid" data-r="zoom">
@@ -636,10 +823,9 @@ footer .tag{font-family:'Cinzel',serif;letter-spacing:.24em;font-size:.8rem;colo
         <div class="knot-badge"><svg viewBox="0 0 100 100" id="knot"></svg></div>
       </div>
       <div class="person" data-r="right">
-        <div class="te role">వధువు</div>
+        <div class="te role" data-t="brideRole"></div>
         <div class="hon" id="brideHon"></div>
         <h3 class="gold-text" id="brideName"></h3>
-        <div class="te tename" id="brideTeName"></div>
         <p id="bridePar"></p>
       </div>
     </div>
@@ -650,9 +836,9 @@ footer .tag{font-family:'Cinzel',serif;letter-spacing:.24em;font-size:.8rem;colo
 <section class="light scallop">
   <div class="wrap">
     <div class="sec-head" data-r="up">
-      <div class="te">మా ప్రయాణం</div>
-      <h2>Our Journey</h2>
-      <p>Bound by a thread of gold, guided by blessings</p>
+      <div class="te kick" data-t="journeyKick"></div>
+      <h2 data-t="journeyH2"></h2>
+      <p data-t="journeyP"></p>
       <div class="divider"></div>
     </div>
     <div class="timeline" id="timeline"><div class="thread"><i></i></div></div>
@@ -663,8 +849,8 @@ footer .tag{font-family:'Cinzel',serif;letter-spacing:.24em;font-size:.8rem;colo
 <section class="dark">
   <div class="wrap">
     <div class="sec-head" data-r="up">
-      <div class="te">మధుర క్షణాలు</div>
-      <h2 class="gold-text">Moments We Cherish</h2>
+      <div class="te kick" data-t="galKick"></div>
+      <h2 class="gold-text" data-t="galH2"></h2>
       <div class="divider"></div>
     </div>
     <div class="gallery" id="gallery"></div>
@@ -675,9 +861,9 @@ footer .tag{font-family:'Cinzel',serif;letter-spacing:.24em;font-size:.8rem;colo
 <section class="light scallop">
   <div class="wrap">
     <div class="sec-head" data-r="up">
-      <div class="te">వివాహ వేడుకలు</div>
-      <h2>Wedding Celebrations</h2>
-      <p>Join us through every ritual, every song and every blessing</p>
+      <div class="te kick" data-t="evKick"></div>
+      <h2 data-t="evH2"></h2>
+      <p data-t="evP"></p>
       <div class="divider"></div>
     </div>
     <div class="events" id="events" style="padding-top:40px"></div>
@@ -688,8 +874,8 @@ footer .tag{font-family:'Cinzel',serif;letter-spacing:.24em;font-size:.8rem;colo
 <section class="dark">
   <div class="wrap">
     <div class="sec-head" data-r="up">
-      <div class="te">వివాహ వేదిక</div>
-      <h2 class="gold-text">Where To Find Us</h2>
+      <div class="te kick" data-t="venueKick"></div>
+      <h2 class="gold-text" data-t="venueH2"></h2>
       <div class="divider"></div>
     </div>
     <div class="venues" id="venues"></div>
@@ -700,28 +886,27 @@ footer .tag{font-family:'Cinzel',serif;letter-spacing:.24em;font-size:.8rem;colo
 <section class="light scallop">
   <div class="wrap">
     <div class="sec-head" data-r="up">
-      <div class="te">అక్షింతలు &amp; ఆశీస్సులు</div>
-      <h2>Shower Your Blessings</h2>
-      <p>Tap to shower akshintalu and petals on the couple</p>
+      <div class="te kick" data-t="blessKick"></div>
+      <h2 data-t="blessH2"></h2>
+      <p data-t="blessP"></p>
       <div class="divider"></div>
     </div>
     <div class="akshinta" data-r="zoom">
-      <button class="btn" id="blessBtn">🌼 Shower Akshintalu</button>
+      <button class="btn" id="blessBtn" data-t="blessBtn"></button>
       <div class="cnt" id="blessCnt"></div>
     </div>
     <div class="sec-head" data-r="up" style="margin-bottom:30px">
-      <h2 style="font-size:clamp(1.5rem,5vw,2.3rem)">Invited By</h2>
+      <h2 style="font-size:clamp(1.5rem,5vw,2.3rem)" data-t="invitedH2"></h2>
     </div>
     <div class="hosts" data-r="zoom">
-      <div class="te">మీ ఆగమనాభిలాషులు</div>
+      <div class="te kick" data-t="hostsKick"></div>
       <div class="hosts-name gold-dark" id="hostsName"></div>
-      <div class="te hosts-te" id="hostsTe"></div>
     </div>
     <div class="families">
-      <div class="fam" data-r="left"><div class="te">వరుని తరఫు</div><h4>Groom's Family</h4><div id="famG"></div></div>
-      <div class="fam" data-r="right"><div class="te">వధువు తరఫు</div><h4>Bride's Family</h4><div id="famB"></div></div>
+      <div class="fam" data-r="left"><h4 data-t="groomFam"></h4><div id="famG"></div></div>
+      <div class="fam" data-r="right"><h4 data-t="brideFam"></h4><div id="famB"></div></div>
     </div>
-    <div class="compl" data-r="up"><p><em>With best compliments from: Near &amp; Dear</em></p><p class="te" id="compl"></p></div>
+    <div class="compl" data-r="up"><p><em data-t="complHead"></em></p><p class="te" id="compl"></p></div>
   </div>
 </section>
 
@@ -729,37 +914,38 @@ footer .tag{font-family:'Cinzel',serif;letter-spacing:.24em;font-size:.8rem;colo
 <section class="dark">
   <div class="wrap">
     <div class="sec-head" data-r="up">
-      <div class="te">మీ రాక మాకు ఆనందం</div>
-      <h2 class="gold-text">Your Presence Is Our Joy</h2>
-      <p class="te vinna">ముక్కోటి దేవతలు ఒక్కటిగా, శతకోటి దీవెనలు అందించగా... వేదమంత్రాల నడుమ ఒక్కటవుతున్న వధూవరులను.. మీ చల్లని దీవెనలతో ఆశీర్వదించగా రారండి...</p>
-      <p>Your presence and blessings will make our celebration complete</p>
+      <div class="te kick" data-t="contactKick"></div>
+      <h2 class="gold-text" data-t="contactH2"></h2>
+      <p class="te vinna" data-t="vinna"></p>
+      <p data-t="contactP"></p>
       <div class="divider"></div>
     </div>
     <div class="contacts" id="contacts" data-r="up"></div>
     <div class="actions" data-r="up">
-      <a class="btn" id="waBtn" target="_blank" rel="noopener">💬 Share via WhatsApp</a>
-      <button class="btn ghost" id="copyMsgBtn">📋 Copy Invite Message</button>
-      <button class="btn ghost" id="copyBtn">🔗 Copy Link</button>
-      <a class="btn ghost" id="calBtn" target="_blank" rel="noopener">📅 Save the Date</a>
+      <a class="btn" id="waBtn" target="_blank" rel="noopener" data-t="waBtn"></a>
+      <button class="btn ghost" id="copyMsgBtn" data-t="copyMsg"></button>
+      <button class="btn ghost" id="copyBtn" data-t="copyLink"></button>
+      <a class="btn ghost" id="calBtn" target="_blank" rel="noopener" data-t="saveDate"></a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="diyas" id="footDiyas"></div>
-  <div class="te" style="color:var(--gold2)">మంగళమ్ మహత్ &nbsp;·&nbsp; కళ్యాణమస్తు</div>
-  <p style="font-style:italic;opacity:.85;margin-top:6px">With love &amp; gratitude</p>
+  <div class="te" style="color:var(--gold2)" data-t="footBless"></div>
+  <p style="font-style:italic;opacity:.85;margin-top:6px" data-t="footLove"></p>
   <div class="script gold-text" id="footNames"></div>
   <div class="tag" id="footTag"></div>
 </footer>
 
-<button id="music" aria-label="Toggle music"><span class="eq"><i></i><i></i><i></i><i></i></span></button>
+<div id="lang" role="group" data-ta="langAria"><span class="knob"></span><button type="button" data-l="en">EN</button><button type="button" data-l="te">తెలుగు</button></div>
+<button id="music" data-ta="musicAria"><span class="eq"><i></i><i></i><i></i><i></i></span></button>
 <div id="lightbox"><button class="x" aria-label="Close">✕</button><button class="pv" aria-label="Previous">‹</button><button class="nx" aria-label="Next">›</button><div id="lbBody"></div></div>
 <div id="toast"></div>
 
 <script>
 (function(){
-const C = CONFIG, $ = s=>document.querySelector(s), RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+let C = CONFIG; const $ = s=>document.querySelector(s), RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const rand=(a,b)=>a+Math.random()*(b-a), pick=a=>a[Math.floor(Math.random()*a.length)];
 
 /* ---------------- SVG builders ---------------- */
@@ -873,13 +1059,78 @@ $('#rings').innerHTML = ringsSVG; $('#rings2').innerHTML = ringsSVG.replace(/id=
 $('#knot').innerHTML = knotSVG;
 document.querySelectorAll('.divider').forEach(d=>d.innerHTML=divider);
 
-$('#gate .g1').textContent = C.groom; $('#gate .g2').textContent = C.bride;
-const splitName=(el,txt,delay)=>{el.innerHTML=[...txt].map((c,i)=>`<span class="ch" style="--i:${i};--d:${delay}ms">${c===' '?'&nbsp;':c}</span>`).join('');};
-splitName($('#nameA'),C.groom,200); splitName($('#nameB'),C.bride,1300);
-$('#heroDate').textContent = C.muhurthamText; $('#cdDate').textContent = C.muhurthamText;
+/* ---------------- Language ---------------- */
+const isObj=v=>v&&typeof v==='object'&&!Array.isArray(v);
+function merge(base,over){
+  if(Array.isArray(base)&&Array.isArray(over)) return base.map((b,i)=>over[i]===undefined?b:merge(b,over[i]));
+  if(isObj(base)&&isObj(over)){const o={...base}; for(const k in over) o[k]=k in base?merge(base[k],over[k]):over[k]; return o;}
+  return over===undefined?base:over;
+}
+let LANG='en', READY=false;
+try{ LANG=localStorage.getItem('mr_lang')||'en'; }catch(e){}
+if(/^#te$/i.test(location.hash)) LANG='te'; else if(/^#en$/i.test(location.hash)) LANG='en';
+let T=TEXT[LANG];
+C = LANG==='te'?merge(CONFIG,TELUGU):CONFIG;
+
+// split text into letters without breaking Telugu conjuncts (e.g. శ్వ) or vowel signs
+function clusters(s){const out=[];for(const ch of s){const c=ch.codePointAt(0);
+  const mark=(c>=0x0C00&&c<=0x0C04)||(c>=0x0C3C&&c<=0x0C56)||(c>=0x0C62&&c<=0x0C63)||c===0x200C||c===0x200D;
+  const joinPrev=out.length&&(mark||/[్‍]$/.test(out[out.length-1]));
+  if(joinPrev) out[out.length-1]+=ch; else out.push(ch);} return out;}
+const splitName=(el,txt,delay)=>{el.innerHTML=clusters(txt).map((c,i)=>`<span class="ch" style="--i:${i};--d:${delay}ms">${c===' '?'&nbsp;':c}</span>`).join('');};
+const gcal=(title,startISO,hours,place)=>{const s=new Date(startISO), e=new Date(s.getTime()+hours*3600e3), f=d=>d.toISOString().replace(/[-:]/g,'').split('.')[0]+'Z';
+  return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${f(s)}/${f(e)}&location=${encodeURIComponent(place)}&details=${encodeURIComponent(CONFIG.groom+' weds '+CONFIG.bride)}`;};
+const url=()=>(C.siteUrl||location.href.split('#')[0])+(LANG==='te'?'#te':'');
+const inviteMsg=()=>C.whatsapp(C,url());
+
+function render(){
+  document.documentElement.lang=LANG; document.title=T.title;
+  document.body.classList.toggle('lang-te',LANG==='te'); document.body.classList.toggle('lang-en',LANG!=='te');
+  document.querySelectorAll('[data-t]').forEach(el=>{const v=T[el.dataset.t]; el.innerHTML=typeof v==='string'?v:'';});
+  document.querySelectorAll('[data-ta]').forEach(el=>el.setAttribute('aria-label',T[el.dataset.ta]||''));
+  document.querySelectorAll('#lang button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.l===LANG)));
+
+  $('#gate .g1').textContent=C.groom; $('#gate .g2').textContent=C.bride;
+  splitName($('#nameA'),C.groom,200); splitName($('#nameB'),C.bride,1300);
+  $('#heroDate').textContent=C.muhurthamText; $('#cdDate').textContent=C.muhurthamLong||C.muhurthamText;
+  $('#cdPanch').textContent=C.panchangam||'';
+  $('#groomHon').textContent=C.groomTitle; $('#brideHon').textContent=C.brideTitle;
+  $('#groomName').textContent=C.groomFull||C.groom; $('#brideName').textContent=C.brideFull||C.bride;
+  $('#groomPar').textContent=C.groomParents; $('#bridePar').textContent=C.brideParents;
+
+  const tl=$('#timeline'); tl.querySelectorAll('.ti').forEach(n=>n.remove());
+  C.journey.forEach((j,i)=>{const d=document.createElement('div'); d.className='ti'; d.setAttribute('data-r',i%2?'right':'left');
+    d.innerHTML=`<div class="card">${j.img?`<div class="jimg"><img src="${j.img}" alt="" loading="lazy"></div>`:''}<div class="num">0${i+1}</div><h4>${j.title}</h4><p>${j.text}</p></div>`; tl.appendChild(d);});
+
+  $('#events').innerHTML=C.events.map((e,i)=>`<div class="ev" data-r="flip" style="transition-delay:${i*150}ms"><div class="ic">${e.icon}</div><h4>${e.title}</h4>
+     <div class="meta"><b>${e.date}</b><br><span class="tm">${e.time}</span>${e.note?`<br><i>${e.note}</i>`:''}<br>${e.place}</div>
+     ${e.mapUrl?`<a class="cal" target="_blank" rel="noopener" href="${e.mapUrl}">${T.directions}</a> `:''}
+     <a class="cal" target="_blank" rel="noopener" href="${gcal(CONFIG.events[i].title+' — '+CONFIG.groom+' & '+CONFIG.bride,e.start,e.hours,CONFIG.events[i].place)}">${T.addCal}</a><div class="lamp"></div></div>`).join('');
+
+  $('#venues').innerHTML=C.venues.map((v,i)=>`<div class="venue" data-r="zoom" style="transition-delay:${i*180}ms"><div class="pin"></div><div class="cinzel vl">${v.label}</div><h3 class="gold-text">${v.name}</h3><p>${v.address}</p><a class="btn" target="_blank" rel="noopener" href="${v.mapUrl}">${T.getDirections}</a></div>`).join('');
+  $('#hostsName').textContent=C.invitedBy.hosts; $('#compl').textContent=C.compliments;
+  $('#famG').innerHTML=C.invitedBy.groomSide.map(l=>`<p>${l}</p>`).join('');
+  $('#famB').innerHTML=C.invitedBy.brideSide.map(l=>`<p>${l}</p>`).join('');
+  $('#contacts').style.display=C.contacts.length?'':'none';
+  $('#contacts').innerHTML=C.contacts.map(c=>`<div class="ct"><h4>${c.name}</h4><a href="tel:${c.phone.replace(/\s/g,'')}">📞 ${c.phone}</a></div>`).join('');
+  $('#waBtn').href=`https://wa.me/?text=${encodeURIComponent(inviteMsg())}`;
+  $('#calBtn').href=gcal(`${CONFIG.groom} weds ${CONFIG.bride} — Muhurtham`,C.muhurtham,3,CONFIG.venues[0].name+', '+CONFIG.venues[0].address);
+  $('#footNames').textContent=`${C.groom} ♡ ${C.bride}`; $('#footTag').textContent=C.hashtag;
+  if(READY){ showBless(); tick(); document.querySelectorAll('[data-r]:not(.in)').forEach(el=>io.observe(el)); }
+}
+
+function setLang(l){
+  if(l===LANG) return;
+  LANG=l; T=TEXT[l]; C=l==='te'?merge(CONFIG,TELUGU):CONFIG;
+  try{localStorage.setItem('mr_lang',l)}catch(e){}
+  try{history.replaceState(null,'',l==='te'?'#te':location.pathname+location.search)}catch(e){}
+  document.body.classList.add('switching');
+  setTimeout(()=>{ render(); document.body.classList.remove('switching'); },220);
+}
+document.querySelectorAll('#lang button').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation(); setLang(b.dataset.l);}));
 
 function media(src, label, isVideo){
-  const ph = `<div class="ph">${phSVG}<span>ADD PHOTO<br>${label}</span></div>`;
+  const ph = `<div class="ph">${phSVG}<span>${T.addPhoto}<br>${label}</span></div>`;
   const wrap = document.createElement('div'); wrap.style.cssText='width:100%;height:100%';
   if(isVideo){
     const v=document.createElement('video'); v.src=src; v.muted=true; v.loop=true; v.playsInline=true; v.preload='metadata';
@@ -892,15 +1143,6 @@ function media(src, label, isVideo){
 }
 $('#couplePic').appendChild(media(C.photos.couple,C.photos.couple));
 $('#band').style.backgroundImage=`url('${C.photos.band}')`;
-$('#groomHon').textContent=C.groomTitle; $('#brideHon').textContent=C.brideTitle;
-$('#groomName').textContent=C.groomFull||C.groom; $('#brideName').textContent=C.brideFull||C.bride;
-$('#groomTeName').textContent=C.groomTe||''; $('#brideTeName').textContent=C.brideTe||'';
-$('#cdPanch').textContent=C.panchangam||'';
-$('#groomPar').textContent=C.groomParents; $('#bridePar').textContent=C.brideParents;
-
-const tl=$('#timeline');
-C.journey.forEach((j,i)=>{const d=document.createElement('div'); d.className='ti'; d.setAttribute('data-r',i%2?'right':'left');
-  d.innerHTML=`<div class="card">${j.img?`<div class="jimg"><img src="${j.img}" alt="" loading="lazy"></div>`:''}<div class="num">0${i+1}</div><h4>${j.title}</h4><p>${j.text}</p></div>`; tl.appendChild(d);});
 
 const gal=$('#gallery');
 C.gallery.forEach((g,i)=>{const d=document.createElement('div'); d.className='g'; d.setAttribute('data-r','zoom'); d.style.transitionDelay=(i%3)*120+'ms';
@@ -908,36 +1150,15 @@ C.gallery.forEach((g,i)=>{const d=document.createElement('div'); d.className='g'
     d.addEventListener('mouseenter',()=>{const v=d.querySelector('video'); v&&v.play().catch(()=>{})}); d.addEventListener('mouseleave',()=>{const v=d.querySelector('video'); v&&v.pause()});}
   d.addEventListener('click',()=>openLB(i)); gal.appendChild(d);});
 
-const gcal=(title,startISO,hours,place)=>{const s=new Date(startISO), e=new Date(s.getTime()+hours*3600e3), f=d=>d.toISOString().replace(/[-:]/g,'').split('.')[0]+'Z';
-  return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${f(s)}/${f(e)}&location=${encodeURIComponent(place)}&details=${encodeURIComponent(C.groom+' weds '+C.bride)}`;};
-const evs=$('#events');
-C.events.forEach((e,i)=>{const d=document.createElement('div'); d.className='ev'; d.setAttribute('data-r','flip'); d.style.transitionDelay=i*150+'ms';
-  d.innerHTML=`<div class="ic">${e.icon}</div><div class="te">${e.te}</div><h4>${e.en}</h4>
-   <div class="meta"><b>${e.date}</b><br><span class="tm">${e.time}</span>${e.note?`<br><i>${e.note}</i>`:''}<br>${e.place}</div>
-   ${e.mapUrl?`<a class="cal" target="_blank" rel="noopener" href="${e.mapUrl}">📍 Directions</a> `:''}
-   <a class="cal" target="_blank" rel="noopener" href="${gcal(e.en+' — '+C.groom+' & '+C.bride,e.start,e.hours,e.place)}">+ Add to Calendar</a><div class="lamp"></div>`;
-  evs.appendChild(d);});
-
-$('#venues').innerHTML=C.venues.map((v,i)=>`<div class="venue" data-r="zoom" style="transition-delay:${i*180}ms"><div class="pin"></div><div class="te vlab">${v.te}</div><div class="cinzel vl">${v.label}</div><h3 class="gold-text">${v.name}</h3><p>${v.address}</p><a class="btn" target="_blank" rel="noopener" href="${v.mapUrl}">📍 Get Directions</a></div>`).join('');
-$('#hostsName').textContent=C.invitedBy.hosts; $('#hostsTe').textContent=C.invitedBy.hostsTe; $('#compl').textContent=C.compliments;
-$('#famG').innerHTML=C.invitedBy.groomSide.map(l=>`<p>${l}</p>`).join('');
-$('#famB').innerHTML=C.invitedBy.brideSide.map(l=>`<p>${l}</p>`).join('');
-if(!C.contacts.length) $('#contacts').style.display='none';
-$('#contacts').innerHTML=C.contacts.map(c=>`<div class="ct"><h4>${c.name}</h4><a href="tel:${c.phone.replace(/\s/g,'')}">📞 ${c.phone}</a></div>`).join('');
-const url=()=>C.siteUrl||location.href.split('#')[0];
-const inviteMsg=()=>C.whatsapp(C,url());
-$('#waBtn').href=`https://wa.me/?text=${encodeURIComponent(inviteMsg())}`;
-const wed=C.events.find(e=>/Muhurtham/i.test(e.en))||C.events[0];
-$('#calBtn').href=gcal(`${C.groom} weds ${C.bride} — Muhurtham`,C.muhurtham,3,C.venues[0].name+', '+C.venues[0].address);
-$('#footNames').textContent=`${C.groom} ♡ ${C.bride}`; $('#footTag').textContent=C.hashtag;
+render();
 
 const diyaHTML=n=>Array.from({length:n},()=>`<div class="diya"><div class="flame"></div><div class="bowl"></div></div>`).join('');
 $('#loaderDiyas').innerHTML=diyaHTML(5); $('#footDiyas').innerHTML=diyaHTML(7);
 
 /* ---------------- Toast ---------------- */
 let tt; function toast(m){const t=$('#toast'); t.textContent=m; t.classList.add('show'); clearTimeout(tt); tt=setTimeout(()=>t.classList.remove('show'),2200);}
-$('#copyMsgBtn').addEventListener('click',()=>{ (navigator.clipboard?navigator.clipboard.writeText(inviteMsg()):Promise.reject()).then(()=>toast('Invite message copied ✓')).catch(()=>toast('Copy not allowed here — use WhatsApp share')); });
-$('#copyBtn').addEventListener('click',()=>{ (navigator.clipboard?navigator.clipboard.writeText(url()):Promise.reject()).then(()=>toast('Link copied ✓')).catch(()=>toast(url())); });
+$('#copyMsgBtn').addEventListener('click',()=>{ (navigator.clipboard?navigator.clipboard.writeText(inviteMsg()):Promise.reject()).then(()=>toast(T.copiedMsg)).catch(()=>toast(T.copyFail)); });
+$('#copyBtn').addEventListener('click',()=>{ (navigator.clipboard?navigator.clipboard.writeText(url()):Promise.reject()).then(()=>toast(T.copiedLink)).catch(()=>toast(url())); });
 
 /* ---------------- Audio ---------------- */
 let AC=null, master=null;
@@ -1022,19 +1243,20 @@ document.querySelectorAll('.door').forEach(d=>d.addEventListener('click',openGat
 
 /* ---------------- Blessings ---------------- */
 let blessings=0; try{blessings=+localStorage.getItem('mr_bless')||0}catch(e){}
-const showBless=()=>{ $('#blessCnt').textContent = blessings? `You have showered blessings ${blessings} time${blessings>1?'s':''} 🙏` : ''; }; showBless();
+function showBless(){ $('#blessCnt').textContent = blessings? T.blessCount(blessings) : ''; } showBless();
 $('#blessBtn').addEventListener('click',()=>{ shower(); ac(); if(AC) bell(AC.currentTime+.02,880,.15); blessings++; try{localStorage.setItem('mr_bless',blessings)}catch(e){} showBless(); });
 
 /* ---------------- Countdown ---------------- */
 const target=new Date(C.muhurtham).getTime(); const prev={};
 function setN(id,v){const el=$('#'+id); const s=String(v).padStart(2,'0'); if(prev[id]!==s){el.textContent=s; el.classList.remove('tick'); void el.offsetWidth; el.classList.add('tick'); prev[id]=s;}}
 function tick(){ let d=target-Date.now();
-  if(d<=0){ ['cdD','cdH','cdM','cdS'].forEach(id=>setN(id,0)); $('#cdNote').textContent='The sacred knot has been tied — thank you for your blessings! 💛'; return; }
+  $('#cdNote').textContent = d<=0 ? T.cdDone : T.cdNote;
+  if(d<=0){ ['cdD','cdH','cdM','cdS'].forEach(id=>setN(id,0)); return; }
   setN('cdD',Math.floor(d/864e5)); setN('cdH',Math.floor(d%864e5/36e5)); setN('cdM',Math.floor(d%36e5/6e4)); setN('cdS',Math.floor(d%6e4/1e3)); }
 tick(); setInterval(tick,1000);
 
 /* ---------------- Reveal & scroll effects ---------------- */
-const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('in'); io.unobserve(e.target);} }),{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+var io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('in'); io.unobserve(e.target);} }),{threshold:.15,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('[data-r]').forEach(el=>io.observe(el));
 const gp=$('#gopuram'), prog=$('#progress'), thread=$('#timeline .thread i'), tlEl=$('#timeline');
 let ticking=false;
@@ -1045,6 +1267,7 @@ function onScroll(){ if(ticking) return; ticking=true; requestAnimationFrame(()=
   const r=tlEl.getBoundingClientRect(); const p=Math.min(1,Math.max(0,(innerHeight*.7-r.top)/r.height)); thread.style.setProperty('--p',p); tlEl.querySelector('.thread i').style.height=p*100+'%';
   ticking=false; }); }
 addEventListener('scroll',onScroll,{passive:true}); onScroll();
+READY=true;
 
 /* ---------------- Lightbox ---------------- */
 let lbI=0; const lb=$('#lightbox'), lbB=$('#lbBody');
