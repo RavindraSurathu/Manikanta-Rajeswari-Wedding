@@ -41,22 +41,58 @@ const CONFIG = {
       date: "Saturday, 21 November 2026", time: "8:52 PM",
       note: "Revathi Nakshatram · Mithuna Lagnam",
       place: "Sri Balaji Convention, Penugonda, W.G. Dist.",
-      mapUrl: "https://www.google.com/maps/search/?api=1&query=Sri+Balaji+Convention+Penugonda" },
+      mapUrl: "https://maps.google.com/?q=Sri+Balaji+Convention+Penugonda" },
     { te: "రిసెప్షన్ & విందు", en: "Reception & Dinner", icon: "✨",
       start: "2026-11-22T19:00:00+05:30", hours: 3,
       date: "Sunday, 22 November 2026", time: "7:00 PM onwards",
-      place: "Sangepu Kalyanamandapam, Near Bus Stop, Gosala, Penamaluru Mandal, Krishna Dist.",
-      mapUrl: "https://www.google.com/maps/search/?api=1&query=Sangepu+Kalyanamandapam+Gosala+Penamaluru" }
+      place: "Sangepu Siva Koteswara Rao Kalyana Vedhika, Bhavanarushi, Nallamekalavari Street, Gosala, Vijayawada",
+      mapUrl: "https://maps.google.com/?q=Sangepu+Siva+Koteswara+Rao+Kalyana+Vedhika+Gosala+Vijayawada" }
   ],
 
   venues: [
     { label: "Kalyana Vedika · Wedding", te: "కళ్యాణవేదిక", name: "Sri Balaji Convention",
       address: "Penugonda, West Godavari District",
-      mapUrl: "https://www.google.com/maps/search/?api=1&query=Sri+Balaji+Convention+Penugonda" },
-    { label: "Reception & Dinner", te: "రిసెప్షన్ & విందు", name: "Sangepu Kalyanamandapam",
-      address: "Near Bus Stop, Gosala, Penamaluru Mandal, Krishna District",
-      mapUrl: "https://www.google.com/maps/search/?api=1&query=Sangepu+Kalyanamandapam+Gosala+Penamaluru" }
+      mapUrl: "https://maps.google.com/?q=Sri+Balaji+Convention+Penugonda" },
+    { label: "Reception & Dinner", te: "రిసెప్షన్ & విందు", name: "Sangepu Siva Koteswara Rao Kalyana Vedhika",
+      address: "Bhavanarushi, Nallamekalavari Street, Gosala, Vijayawada",
+      mapUrl: "https://maps.google.com/?q=Sangepu+Siva+Koteswara+Rao+Kalyana+Vedhika+Gosala+Vijayawada" }
   ],
+  // Tip: for an exact pin, open the venue in Google Maps → Share → Copy link,
+  // and paste that maps.app.goo.gl link into mapUrl above (used on the site and in WhatsApp).
+
+  // ---- WhatsApp invitation message (WhatsApp formatting: *bold*  _italic_) ----
+  whatsapp: (C, link) => [
+    "🪔 *శ్రీరస్తు · శుభమస్తు · అవిఘ్నమస్తు* 🪔",
+    "",
+    "_With the divine blessings of the Almighty & our elders_ 💐",
+    "",
+    `💍 *${C.groomFull}*  ❤️  *${C.brideFull}* 💍`,
+    "",
+    "Together with our families, we joyfully invite you and your family to grace the wedding and shower your blessings on the couple. 🙏✨",
+    "",
+    "━━━━━━━━━━━━━━━",
+    "🔥 *WEDDING MUHURTHAM*",
+    "📅 Saturday, 21 November 2026",
+    "🕗 8:52 PM",
+    `📍 ${C.venues[0].name}, Penugonda`,
+    `🗺️ ${C.venues[0].mapUrl}`,
+    "",
+    "━━━━━━━━━━━━━━━",
+    "🎉 *RECEPTION & DINNER*",
+    "📅 Sunday, 22 November 2026",
+    "🕖 7:00 PM onwards",
+    `📍 ${C.venues[1].name}, ${C.venues[1].address}`,
+    `🗺️ ${C.venues[1].mapUrl}`,
+    "━━━━━━━━━━━━━━━",
+    "",
+    "Your presence and blessings will make our celebration truly special. ❤️",
+    "",
+    "🌐 *View the complete invitation & directions:*",
+    link,
+    "",
+    "_With love & warm regards,_",
+    "*— The Families* 🙏",
+  ].join("\n"),
 
   journey: [
     { title: "By the Shore", img: "images/j1.jpg", text: "Like the waves that keep coming back to the shore, two hearts kept finding their way to each other." },
@@ -702,6 +738,7 @@ footer .tag{font-family:'Cinzel',serif;letter-spacing:.24em;font-size:.8rem;colo
     <div class="contacts" id="contacts" data-r="up"></div>
     <div class="actions" data-r="up">
       <a class="btn" id="waBtn" target="_blank" rel="noopener">💬 Share via WhatsApp</a>
+      <button class="btn ghost" id="copyMsgBtn">📋 Copy Invite Message</button>
       <button class="btn ghost" id="copyBtn">🔗 Copy Link</button>
       <a class="btn ghost" id="calBtn" target="_blank" rel="noopener">📅 Save the Date</a>
     </div>
@@ -888,7 +925,8 @@ $('#famB').innerHTML=C.invitedBy.brideSide.map(l=>`<p>${l}</p>`).join('');
 if(!C.contacts.length) $('#contacts').style.display='none';
 $('#contacts').innerHTML=C.contacts.map(c=>`<div class="ct"><h4>${c.name}</h4><a href="tel:${c.phone.replace(/\s/g,'')}">📞 ${c.phone}</a></div>`).join('');
 const url=()=>C.siteUrl||location.href.split('#')[0];
-$('#waBtn').href=`https://wa.me/?text=${encodeURIComponent(`🪔 శ్రీరస్తు శుభమస్తు 🪔\nYou are cordially invited to the wedding of Chi. ${C.groomFull} with Chi. La. Sow. ${C.brideFull}\n\n🔥 Sumuhurtham: ${C.muhurthamText}\n📍 ${C.venues[0].name}, ${C.venues[0].address}\n\n✨ Reception & Dinner: Sunday, 22 November 2026, 7:00 PM\n📍 ${C.venues[1].name}, ${C.venues[1].address}\n\nOpen the invitation: ${url()}`)}`;
+const inviteMsg=()=>C.whatsapp(C,url());
+$('#waBtn').href=`https://wa.me/?text=${encodeURIComponent(inviteMsg())}`;
 const wed=C.events.find(e=>/Muhurtham/i.test(e.en))||C.events[0];
 $('#calBtn').href=gcal(`${C.groom} weds ${C.bride} — Muhurtham`,C.muhurtham,3,C.venues[0].name+', '+C.venues[0].address);
 $('#footNames').textContent=`${C.groom} ♡ ${C.bride}`; $('#footTag').textContent=C.hashtag;
@@ -898,6 +936,7 @@ $('#loaderDiyas').innerHTML=diyaHTML(5); $('#footDiyas').innerHTML=diyaHTML(7);
 
 /* ---------------- Toast ---------------- */
 let tt; function toast(m){const t=$('#toast'); t.textContent=m; t.classList.add('show'); clearTimeout(tt); tt=setTimeout(()=>t.classList.remove('show'),2200);}
+$('#copyMsgBtn').addEventListener('click',()=>{ (navigator.clipboard?navigator.clipboard.writeText(inviteMsg()):Promise.reject()).then(()=>toast('Invite message copied ✓')).catch(()=>toast('Copy not allowed here — use WhatsApp share')); });
 $('#copyBtn').addEventListener('click',()=>{ (navigator.clipboard?navigator.clipboard.writeText(url()):Promise.reject()).then(()=>toast('Link copied ✓')).catch(()=>toast(url())); });
 
 /* ---------------- Audio ---------------- */
