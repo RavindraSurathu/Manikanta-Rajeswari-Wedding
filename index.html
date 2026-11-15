@@ -191,6 +191,8 @@ a{color:inherit}
 #gate.open .gate-text,#gate.open .gate-bell,#gate.open .torana{opacity:0;transform:translateY(-20px);transition:opacity .9s,transform .9s}
 .gate-text .te{color:var(--gold2);font-size:clamp(1.1rem,4.5vw,1.6rem);letter-spacing:.04em}
 .gate-text h1{font-family:'Cinzel Decorative',serif;font-weight:700;font-size:clamp(1.8rem,8vw,3.4rem);line-height:1.15;margin:.2em 0}
+.gate-text h1 .g1,.gate-text h1 .g2{white-space:nowrap}
+@media (max-width:600px){.gate-text h1{display:flex;flex-direction:column;align-items:center;line-height:1.05;font-size:clamp(1.9rem,10vw,2.8rem)}.gate-text h1 .amp{font-size:.8em;line-height:1}}
 .gate-text h1 .amp{font-family:'Great Vibes',cursive;font-weight:400;color:#ff9fa8;padding:0 .15em}
 .gate-text .tag{font-style:italic;opacity:.85;font-size:clamp(.95rem,3.6vw,1.15rem)}
 .tap{display:inline-flex;align-items:center;gap:10px;margin-top:18px;padding:12px 26px;border-radius:40px;border:1.5px solid var(--gold);
@@ -513,7 +515,7 @@ footer .tag{font-family:'Cinzel',serif;letter-spacing:.24em;font-size:.8rem;colo
 
   <div class="gate-text">
     <div class="te">శుభ వివాహ ఆహ్వానం</div>
-    <h1 class="gold-text"><span class="g1"></span><span class="amp">&amp;</span><span class="g2"></span></h1>
+    <h1 class="gold-text"><span class="g1"></span> <span class="amp">&amp;</span> <span class="g2"></span></h1>
     <div class="tag">Two families, one sacred bond — blessed in the presence of the divine</div>
     <button class="tap" id="tapBtn">🔔 Ring the bell to enter</button>
   </div>
