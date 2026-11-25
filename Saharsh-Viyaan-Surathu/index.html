@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#140a06">
+<title>Saharsh Viyaan Surathu turns ONE!</title>
+<meta name="description" content="You’re invited to Saharsh Viyaan’s 1st birthday – 28 Nov 2026, 7 PM onwards, SVLT Sainadha Kalyana Mandapam, Krishnalanka.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vivaah Creations">
+<meta property="og:title" content="You’re invited – Saharsh Viyaan’s 1st Birthday 🧸">
+<meta property="og:description" content="28 Nov 2026 · 7 PM onwards · SVLT Sainadha Kalyana Mandapam, Krishnalanka">
+<meta property="og:image" content="https://vivaahcreations.com/Saharsh-Viyaan-Surathu/assets/img/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Fredoka:wght@400;500;600;700&family=Great+Vibes&family=Noto+Sans+Telugu:wght@400;600;800&family=Ramaraja&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="stylesheet" href="assets/css/style.css">
+<noscript><style>#gate{display:none!important}.kicker,.turning,.ch{opacity:1!important}</style></noscript>
+</head>
+<body class="is-locked">
+<a class="skip" href="#main" data-i18n="skip">Skip to invitation</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="paw" viewBox="-16 -20 32 38"><g fill="currentColor"><ellipse cx="0" cy="8" rx="11" ry="9"/><circle cx="-12" cy="-4" r="4.6"/><circle cx="-4.5" cy="-12.5" r="4.6"/><circle cx="4.5" cy="-12.5" r="4.6"/><circle cx="12" cy="-4" r="4.6"/></g></symbol></svg>
+
+<canvas id="gl" aria-hidden="true"></canvas>
+<div class="vig" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+<div id="cursor" aria-hidden="true"></div>
+<div id="pbar" aria-hidden="true"></div>
+<nav class="dots" id="dots" aria-label="Sections"></nav>
+
+<div class="ui">
+  <a class="brandpill" id="brandpill" href="https://vivaahcreations.com" target="_blank" rel="noopener">Vivaah Creations</a>
+  <div class="ctrl">
+    <button class="chip" id="snd" type="button" aria-pressed="false" aria-label="Sound">🔊</button>
+    <button class="chip" id="lang" type="button">తెలుగు</button>
+  </div>
+</div>
+
+<!-- ================= OPENING SCREEN ================= -->
+<div id="gate" role="dialog" aria-modal="true" aria-label="Invitation">
+  <p class="g-brand">Vivaah Creations</p>
+  <div class="gate-in">
+    <p class="o-kick" data-i18n="g_kick"></p>
+    <button class="env" id="seal" type="button" aria-label="Open the invitation">
+      <svg class="peek" viewBox="0 0 120 110" aria-hidden="true"><circle cx="24" cy="38" r="17" fill="#a5663a"/><circle cx="24" cy="39" r="9" fill="#f0cfa2"/><circle cx="96" cy="38" r="17" fill="#a5663a"/><circle cx="96" cy="39" r="9" fill="#f0cfa2"/><circle cx="60" cy="62" r="42" fill="#bf7f4a"/><ellipse cx="60" cy="78" rx="19" ry="14" fill="#f3dcb8"/><ellipse cx="60" cy="70" rx="7" ry="5" fill="#2a150d"/><path d="M60 75v6M52 83q8 7 16 0" stroke="#2a150d" stroke-width="2.4" fill="none" stroke-linecap="round"/><circle cx="44" cy="56" r="5" fill="#2a150d"/><circle cx="76" cy="56" r="5" fill="#2a150d"/><circle cx="45.5" cy="54.5" r="1.8" fill="#fff"/><circle cx="77.5" cy="54.5" r="1.8" fill="#fff"/><circle cx="33" cy="76" r="6" fill="#ff9fb0" opacity=".5"/><circle cx="87" cy="76" r="6" fill="#ff9fb0" opacity=".5"/><path d="M60 2L40 34H80Z" fill="#fbf0dc" stroke="#3a2016" stroke-width="2" stroke-linejoin="round"/><circle cx="60" cy="4" r="6" fill="#e8c27a"/></svg>
+      <span class="back"></span>
+      <span class="letter" data-i18n="g_letter"></span>
+      <span class="pocket"></span>
+      <span class="flap"></span>
+      <span class="seal"><i class="sl">1</i><i class="sr">1</i></span>
+    </button>
+    <p class="o-tap" data-i18n="g_tap"></p>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="sec hero" id="hero" data-sec data-l="Home">
+    <i class="orb o1" data-sp=".12"></i><i class="orb o2" data-sp=".2"></i>
+    <div class="wrap">
+      <p class="dear script" id="dear"></p>
+      <p class="kicker" data-i18n="h_kick"></p>
+      <h1 class="name" id="name"></h1>
+      <p class="turning" data-i18n="h_turn"></p>
+
+      <div class="stage" id="stage">
+        <div class="bearwrap" data-sp="-.06">
+          <svg class="bear" id="bear" viewBox="0 0 300 330" role="img" aria-label="Teddy bear in a party hat. Tap me!">
+            <defs>
+              <radialGradient id="gl2"><stop offset="0" stop-color="#e8c27a" stop-opacity=".6"/><stop offset="1" stop-color="#e8c27a" stop-opacity="0"/></radialGradient>
+              <radialGradient id="fur" cx="40%" cy="28%" r="85%"><stop offset="0" stop-color="#dba46a"/><stop offset="1" stop-color="#a5663a"/></radialGradient>
+            </defs>
+            <circle class="glow" cx="150" cy="185" r="150" fill="url(#gl2)"/>
+            <g fill="#e8c27a">
+              <path class="tws" d="M40 78l3 9 9 3-9 3-3 9-3-9-9-3 9-3z"/>
+              <path class="tws" style="animation-delay:-.8s" d="M262 128l3 9 9 3-9 3-3 9-3-9-9-3 9-3z"/>
+              <path class="tws" style="animation-delay:-1.4s" d="M28 210l2.5 7 7 2.5-7 2.5-2.5 7-2.5-7-7-2.5 7-2.5z"/>
+              <path class="tws" style="animation-delay:-.4s" d="M268 250l2.5 7 7 2.5-7 2.5-2.5 7-2.5-7-7-2.5 7-2.5z"/>
+            </g>
+            <circle cx="86" cy="98" r="32" fill="url(#fur)"/><circle cx="86" cy="100" r="18" fill="#f0cfa2"/>
+            <circle cx="214" cy="98" r="32" fill="url(#fur)"/><circle cx="214" cy="100" r="18" fill="#f0cfa2"/>
+            <ellipse cx="102" cy="302" rx="38" ry="24" fill="url(#fur)"/><ellipse cx="102" cy="304" rx="20" ry="12" fill="#f0cfa2"/>
+            <ellipse cx="198" cy="302" rx="38" ry="24" fill="url(#fur)"/><ellipse cx="198" cy="304" rx="20" ry="12" fill="#f0cfa2"/>
+            <ellipse cx="150" cy="250" rx="74" ry="66" fill="url(#fur)"/>
+            <ellipse cx="150" cy="260" rx="46" ry="46" fill="#f3dcb8"/>
+            <ellipse cx="82" cy="240" rx="20" ry="38" fill="url(#fur)" transform="rotate(22 82 240)"/>
+            <g class="arm-r"><ellipse cx="218" cy="240" rx="20" ry="38" fill="url(#fur)" transform="rotate(-22 218 240)"/></g>
+            <circle cx="150" cy="128" r="72" fill="url(#fur)"/>
+            <ellipse cx="150" cy="154" rx="34" ry="26" fill="#f3dcb8"/>
+            <ellipse cx="150" cy="141" rx="12" ry="8.5" fill="#2a150d"/><ellipse cx="146" cy="138" rx="4" ry="2" fill="#fff" opacity=".5"/>
+            <path d="M150 149v10M136 161q14 12 28 0" stroke="#2a150d" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+            <g class="eyes">
+              <g id="eL"><circle cx="121" cy="122" r="8.5" fill="#2a150d"/><circle cx="124" cy="119" r="3" fill="#fff"/></g>
+              <g id="eR"><circle cx="179" cy="122" r="8.5" fill="#2a150d"/><circle cx="182" cy="119" r="3" fill="#fff"/></g>
+            </g>
+            <circle cx="99" cy="150" r="10" fill="#ff9fb0" opacity=".5"/><circle cx="201" cy="150" r="10" fill="#ff9fb0" opacity=".5"/>
+            <path d="M150 206L116 188V224Z M150 206L184 188V224Z" fill="#fbf0dc" stroke="#3a2016" stroke-width="3" stroke-linejoin="round"/>
+            <circle cx="150" cy="206" r="9" fill="#e8c27a" stroke="#3a2016" stroke-width="3"/>
+            <g class="hat"><g transform="rotate(-9 150 78)">
+              <path d="M150 4L104 80H196Z" fill="#fbf0dc" stroke="#3a2016" stroke-width="3" stroke-linejoin="round"/>
+              <path d="M138 28l-26 48h20zM160 24l22 52h-20zM150 8l-6 24h12z" fill="#5b3623" opacity=".9"/>
+              <ellipse cx="150" cy="80" rx="48" ry="8" fill="#e8c27a" stroke="#3a2016" stroke-width="3"/>
+              <circle cx="150" cy="6" r="10" fill="#e8c27a" stroke="#3a2016" stroke-width="3"/>
+            </g></g>
+          </svg>
+        </div>
+        <div class="coin" aria-label="1">1</div>
+      </div>
+
+      <p class="lead" data-i18n="h_lead"></p>
+      <div class="invite"><b data-i18n="h_invl"></b><span data-i18n="h_invby"></span></div>
+      <div class="cta">
+        <a class="btn mag" href="#rsvp" data-i18n="h_rsvp"></a>
+        <a class="btn ghost mag" href="#card" data-i18n="h_det"></a>
+      </div>
+      <a class="hint" href="#card" data-i18n="h_scroll"></a>
+    </div>
+  </section>
+
+  <div class="ribbon" aria-hidden="true"><div class="rb"><div class="track" id="track"></div></div></div>
+
+  <!-- ================= INVITATION CARD ================= -->
+  <section class="sec" id="card" data-sec data-l="Invitation">
+    <i class="orb o3" data-sp=".15"></i>
+    <div class="wrap center">
+      <p class="eyebrow rv" data-i18n="c_eyebrow"></p>
+      <h2 class="h2 mask"><span data-i18n="c_sub"></span></h2>
+
+      <article class="paper rv" id="paper" data-tilt>
+        <div class="paper-in">
+          <p class="eyebrow dark" data-i18n="h_invl"></p>
+          <p class="invby" data-i18n="h_invby"></p>
+          <div class="orn" aria-hidden="true"></div>
+          <h3 class="pname" data-name></h3>
+
+          <div class="rows">
+            <div class="row"><span class="ico" aria-hidden="true">📅</span><div><h3 data-i18n="r1h"></h3><p data-i18n-html="r1"></p></div></div>
+            <div class="row"><span class="ico" aria-hidden="true">🕖</span><div><h3 data-i18n="r2h"></h3><p data-i18n-html="r2"></p></div></div>
+            <div class="row"><span class="ico" aria-hidden="true">📍</span><div><h3 data-i18n="r3h"></h3><p data-i18n-html="r3"></p></div></div>
+            <div class="row"><span class="ico" aria-hidden="true">🧸</span><div><h3 data-i18n="r4h"></h3><p data-i18n-html="r4"></p></div></div>
+          </div>
+
+          <div class="acts">
+            <a class="btn sm mag" id="mapBtn" target="_blank" rel="noopener" href="#" data-i18n="b_map"></a>
+            <div class="calwrap">
+              <button class="btn sm dark mag" id="calBtn" type="button" aria-haspopup="true" aria-expanded="false" data-i18n="b_cal"></button>
+              <div class="menu" id="calMenu" hidden>
+                <a id="calG" target="_blank" rel="noopener" href="#" data-i18n="cal_g"></a>
+                <button id="calI" type="button" data-i18n="cal_i"></button>
+              </div>
+            </div>
+            <button class="btn sm dark mag" id="shareBtn" type="button" data-i18n="b_share"></button>
+          </div>
+        </div>
+        <i class="glare" aria-hidden="true"></i>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= COUNTDOWN ================= -->
+  <section class="sec" id="countdown" data-sec data-l="Countdown">
+    <i class="orb o4" data-sp=".18"></i>
+    <div class="wrap center">
+      <h2 class="h2 mask"><span data-i18n="cd_h"></span></h2>
+      <p class="sub rv" data-i18n="cd_s"></p>
+
+      <div class="cakewrap rv" data-rv="zoom">
+        <svg class="cake" id="cake" viewBox="0 0 220 210" role="img" aria-label="Chocolate birthday cake with one candle">
+          <defs>
+            <radialGradient id="fg"><stop offset="0" stop-color="#ffd27a" stop-opacity=".8"/><stop offset="1" stop-color="#ffd27a" stop-opacity="0"/></radialGradient>
+            <linearGradient id="fl2" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff9a3c"/><stop offset="1" stop-color="#ffe9a0"/></linearGradient>
+          </defs>
+          <ellipse cx="110" cy="190" rx="100" ry="14" fill="#f2dfbd"/><ellipse cx="110" cy="188" rx="82" ry="9" fill="#e2c996"/>
+          <rect x="26" y="122" width="168" height="62" rx="12" fill="#4b2b1c"/>
+          <rect x="56" y="80" width="108" height="48" rx="10" fill="#5b3623"/>
+          <g fill="#fbf0dc">
+            <rect x="26" y="120" width="168" height="16" rx="8"/>
+            <rect x="40" y="128" width="14" height="26" rx="7"/><rect x="82" y="128" width="14" height="20" rx="7"/><rect x="126" y="128" width="14" height="28" rx="7"/><rect x="166" y="128" width="14" height="20" rx="7"/>
+            <rect x="56" y="78" width="108" height="14" rx="7"/>
+            <rect x="70" y="86" width="12" height="20" rx="6"/><rect x="104" y="86" width="12" height="26" rx="6"/><rect x="142" y="86" width="12" height="18" rx="6"/>
+          </g>
+          <g fill="#e8c27a"><circle cx="62" cy="168" r="3"/><circle cx="90" cy="172" r="3"/><circle cx="130" cy="170" r="3"/><circle cx="158" cy="174" r="3"/><circle cx="110" cy="164" r="3"/><circle cx="76" cy="104" r="2.5"/><circle cx="130" cy="100" r="2.5"/></g>
+          <text x="110" y="158" text-anchor="middle" font-family="Fredoka,sans-serif" font-weight="700" font-size="28" fill="#e8c27a" opacity=".9">1</text>
+          <rect x="104" y="44" width="12" height="38" rx="3" fill="#fbf0dc"/>
+          <path d="M104 54l12-6M104 64l12-6M104 74l12-6" stroke="#e8c27a" stroke-width="3"/>
+          <circle class="flglow" cx="110" cy="30" r="30" fill="url(#fg)"/>
+          <g class="flame"><path d="M110 8C124 24 120 40 110 42C100 40 96 24 110 8Z" fill="url(#fl2)"/><path d="M110 24C115 32 114 38 110 39C106 38 105 32 110 24Z" fill="#fffaf1" opacity=".9"/></g>
+          <g class="smoke" fill="#cdbba4"><circle cx="110" cy="38" r="5"/><circle cx="108" cy="38" r="4"/><circle cx="112" cy="38" r="4"/></g>
+        </svg>
+      </div>
+
+      <div class="flips" id="flips" role="timer" aria-live="off">
+        <div class="unit"><div class="flip"></div><small></small></div>
+        <div class="unit"><div class="flip"></div><small></small></div>
+        <div class="unit"><div class="flip"></div><small></small></div>
+        <div class="unit"><div class="flip"></div><small></small></div>
+      </div>
+      <p class="done" id="cdDone" hidden></p>
+      <button class="btn mag wishbtn" id="wish" type="button"><span class="w1" data-i18n="wish"></span><span class="w2" data-i18n="wished"></span></button>
+    </div>
+  </section>
+
+  <!-- ================= PINNED PHOTO STORY ================= -->
+  <section class="pin" id="story" data-sec data-l="Photos">
+    <div class="pin-sticky">
+      <div class="pin-head">
+        <h2 class="h2 mask"><span data-i18n="st_h"></span></h2>
+        <p class="sub" style="margin-bottom:0" data-i18n="st_s"></p>
+      </div>
+      <div class="strip" id="strip"></div>
+      <div class="pbar" aria-hidden="true"><i id="sbar"></i></div>
+    </div>
+  </section>
+
+  <!-- ================= RSVP ================= -->
+  <section class="sec" id="rsvp" data-sec data-l="RSVP">
+    <div class="wrap center">
+      <h2 class="h2 mask"><span data-i18n="rv_h"></span></h2>
+      <p class="sub rv" data-i18n="rv_s"></p>
+
+      <form class="paper form rv" id="rsvpForm" novalidate>
+        <div class="paper-in">
+          <div class="field">
+            <label for="fName" data-i18n="f_name"></label>
+            <input type="text" id="fName" autocomplete="name" maxlength="60" data-i18n-ph="f_name_ph">
+          </div>
+          <div class="field seg" role="radiogroup">
+            <input type="radio" name="att" id="attY" value="yes" checked><label for="attY" data-i18n="f_yes"></label>
+            <input type="radio" name="att" id="attN" value="no"><label for="attN" data-i18n="f_no"></label>
+          </div>
+          <div class="field" id="guestsField">
+            <span class="lbl" data-i18n="f_guests"></span>
+            <div class="stepper"><button type="button" id="gMinus" aria-label="−">−</button><output id="gOut" aria-live="polite">2</output><button type="button" id="gPlus" aria-label="+">+</button></div>
+          </div>
+          <div class="field">
+            <label for="fNote" data-i18n="f_note"></label>
+            <textarea id="fNote" maxlength="240" data-i18n-ph="f_note_ph"></textarea>
+          </div>
+          <p class="err" id="fErr" role="alert"></p>
+          <button class="btn mag" type="submit" data-i18n="f_send"></button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= BRAND ================= -->
+  <section class="sec brand center" id="brand" data-sec data-l="Vivaah Creations">
+    <i class="orb o1" data-sp=".1"></i>
+    <div class="wrap">
+      <div class="mono rv" id="mono" data-rv="zoom">
+        <svg viewBox="0 0 120 120" role="img" aria-label="Vivaah Creations monogram">
+          <defs><linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset=".5" stop-color="#e8c27a"/><stop offset="1" stop-color="#b9772f"/></linearGradient></defs>
+          <circle class="ring" cx="60" cy="60" r="54" fill="none" stroke="url(#gold)" stroke-width="2.5" pathLength="1"/>
+          <circle cx="60" cy="60" r="46" fill="none" stroke="rgba(232,194,122,.35)" stroke-width="1"/>
+          <text x="60" y="78" text-anchor="middle" font-family="Great Vibes, cursive" font-size="54" fill="url(#gold)">VC</text>
+        </svg>
+      </div>
+      <p class="eyebrow rv" data-i18n="br_kick"></p>
+      <h2 class="brandname script rv" id="brandName">Vivaah Creations</h2>
+      <p class="sub rv" data-i18n="br_tag"></p>
+      <ul class="chips rv" id="chips"></ul>
+      <div class="cta rv">
+        <a class="btn mag" id="brandCta" href="https://vivaahcreations.com" target="_blank" rel="noopener" data-i18n="br_cta"></a>
+        <span id="brandLinks" class="cta"></span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <p class="fred" data-i18n="foot_love"></p>
+  <p data-i18n="foot_made"></p>
+  <p class="copy">© 2026 <a href="https://vivaahcreations.com" target="_blank" rel="noopener">Vivaah Creations</a></p>
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/gl.js"></script>
+<script src="assets/js/fx.js"></script>
+<script src="assets/js/audio.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

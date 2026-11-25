@@ -94,3 +94,8 @@ and add a card for it on the landing page.
 
 - The old link `https://ravindrasurathu.github.io/Manikanta-Rajeswari-Wedding/` redirects to https://vivaahcreations.com/ (the landing page), which links to the invitation.
 - Repo **Settings → Pages**: custom domain `vivaahcreations.com`, **Enforce HTTPS** ticked.
+
+
+---
+## Also hosted here: Saharsh Viyaan – 1st Birthday (v2)
+Folder `Saharsh-Viyaan-Surathu/` → https://vivaahcreations.com/Saharsh-Viyaan-Surathu/ (linked from the home page; photos go in `Saharsh-Viyaan-Surathu/photos/`, see its README).
